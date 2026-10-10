@@ -1,0 +1,32 @@
+WILDLIGHT FRONTIER — ICON DESIGN
+
+Artwork generated with the built-in imagegen tool. No reference image used.
+Transparent-background generation; original PNG retained without retouching.
+Pillow was used only for resizing and PNG/ICO/ICNS format conversion.
+
+Assets (relative to package root):
+  app/icons/wildlight-master.png  Original transparent artwork
+  app/icons/wildlight-512.png     Launcher-page and general-purpose icon
+  app/icons/wildlight-180.png     Apple touch icon
+  app/icons/wildlight.ico         Windows and browser icon, seven sizes
+  app/icons/wildlight.icns        macOS icon for manual assignment
+
+Windows sizes: 16, 24, 32, 48, 64, 128 and 256 pixels.
+The ICO is embedded in both Windows binaries using source/embed_icon.py.
+Players do not need Python or image-processing software to launch the game.
+
+Generation prompt:
+Use case: logo-brand. Asset type: finished desktop game launcher icon for an
+original game named Wildlight Frontier. Create ONE polished square app icon,
+not a mockup or an icon sheet, no lettering. A bold sculpted voxel mountain
+with a luminous turquoise river flowing from the mountain toward the foreground,
+a single dark pine tree on one bank, and a warm gold rising sun behind the peak.
+Enclose the landscape within a rounded-square deep petrol-teal tile with a subtle
+bevel, matte forest-green stone, restrained warm highlights. Premium adventure-game
+identity, elegant simple silhouette, large chunky planes rather than tiny blocks,
+clear at 32 pixels. Slight three-quarter isometric dimensionality, controlled
+beautiful lighting. The tile should occupy roughly 92% of the square canvas,
+even transparent margin, genuinely transparent outside the rounded square,
+no cast shadow beyond tile, no text, no letters, no watermark, no UI,
+no border frame, no extra objects. Strong teal/emerald/gold contrast and a
+luminous river as the single main focal path.

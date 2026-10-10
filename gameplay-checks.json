@@ -1,0 +1,239 @@
+[
+  {
+    "test": "Entire game boots with real Three.js math, geometries, textures and materials; rendering/DOM doubled",
+    "pass": true
+  },
+  {
+    "test": "Deterministic world, negative coordinates 16,000 blocks away, collision-free chunk keys",
+    "pass": true,
+    "ms": 218
+  },
+  {
+    "test": "Deterministic ruins with chests, masonry, and glowing crystal ore below Y 28",
+    "pass": true,
+    "oreBlocks": 97,
+    "ruin": {
+      "x": 8,
+      "y": 57,
+      "z": -232,
+      "cx": 0,
+      "cz": -15
+    }
+  },
+  {
+    "test": "Beacon voxel lighting, removal, and real Three.js chunk meshing",
+    "pass": true
+  },
+  {
+    "test": "All crafting recipes, both crafting tiers, translated and mirrored patterns",
+    "pass": true,
+    "count": 160
+  },
+  {
+    "test": "Full-inventory shift crafting is atomic and cannot duplicate partial outputs",
+    "pass": true
+  },
+  {
+    "test": "Recipe assistance, output collection and closing inventory conserve resources",
+    "pass": true
+  },
+  {
+    "test": "Chest transfers, quick-move and right-click splitting preserve counts",
+    "pass": true
+  },
+  {
+    "test": "Camp placement, home point, safe night rest and healing",
+    "pass": true
+  },
+  {
+    "test": "Save serialization round-trip; inventory, chests, camp and edits retained; malformed saves rejected",
+    "pass": true
+  },
+  {
+    "test": "Block raycasting and swept entity collision at chunk borders",
+    "pass": true
+  },
+  {
+    "test": "Four graphics presets, journal/maps, creative palette/flight, HUD and held-item update",
+    "pass": true
+  },
+  {
+    "test": "Ray volume updates after mining/building; water flows, separate colour/depth targets, all render layers and graphics saves",
+    "pass": true,
+    "volumeBuildMS": 4
+  },
+  {
+    "test": "All recipes have valid resources; every playable item has an icon; 35 creature definitions available",
+    "pass": true
+  },
+  {
+    "test": "Furnace consumes one fuel, smelts exact outputs, blocks overflow, and feeds a downward hopper chain",
+    "pass": true
+  },
+  {
+    "test": "Hoe, seeds, water hydration, two crop growth transitions and harvest resource accounting",
+    "pass": true
+  },
+  {
+    "test": "Wire signal attenuation, lamp toggles, piston extension/retraction and powered TNT with persistent fuse",
+    "pass": true
+  },
+  {
+    "test": "Atomic trading costs, durable/enchantable item metadata, armor, hunger, drowning and healing potion",
+    "pass": true
+  },
+  {
+    "test": "Actual workstation buttons enchant, repair and brew; equipment, research guide and world commands execute",
+    "pass": true
+  },
+  {
+    "test": "Breeding creates a baby, shearing yields wool, all creature meshes/AI tick, and arrows hit a target",
+    "pass": true
+  },
+  {
+    "test": "Version 2 restores equipment, enchantments, machines and tame residents; version 1 migrates; corrupt expanded data is rejected",
+    "pass": true
+  },
+  {
+    "test": "Travel preserves separate realm edits, storage, creatures, shared equipment and complete multi-realm backups",
+    "pass": true
+  },
+  {
+    "test": "Four healing crystals regenerate the guardian; defeating it awards the glider resource and creates a return gate",
+    "pass": true
+  },
+  {
+    "test": "Realm atmosphere, rain geometry, clear weather, survival HUD and integrated gameplay tick execute",
+    "pass": true
+  },
+  {
+    "test": "Two-block doors place and break without duplication; obsidian frames light; death drops include crafting and cursor items",
+    "pass": true
+  },
+  {
+    "test": "Castle gate, hall, library, roof and crypt are reachable; treasure and residents initialize once",
+    "pass": true,
+    "castle": {
+      "id": "castle:-1,-1",
+      "type": "castle",
+      "x": -58,
+      "z": -122,
+      "y": 56,
+      "name": "Crownfall Keep"
+    },
+    "navigationNodes": 2666
+  },
+  {
+    "test": "Cavern ramp, grotto vault and abandoned mine supply cache are connected on foot",
+    "pass": true,
+    "cave": {
+      "id": "cave:-1,-1",
+      "type": "cave",
+      "x": -188,
+      "z": -198,
+      "y": 61,
+      "name": "Whispering Depths"
+    },
+    "navigationNodes": 3980
+  },
+  {
+    "test": "Horses tame, consume saddles, mount and dismount; leads, profession offers, discovery and old v2 migration persist",
+    "pass": true
+  },
+  {
+    "test": "Rain queries roofs, invalidates after edits, builds smoothly, and creates one splash on water entry inside a cavern",
+    "pass": true
+  },
+  {
+    "test": "Planar reflection follows camera motion on consecutive frames and restores clip/visibility state",
+    "pass": true
+  },
+  {
+    "test": "Generated trees retain root heights in real chunk geometry and share their wind animation with shadow depth",
+    "pass": true
+  },
+  {
+    "test": "Wilderness guide exposes weather, landmark routes, travel controls and discovery history",
+    "pass": true
+  },
+  {
+    "test": "132 block definitions and 160 recipes; partial blocks mesh, pick, collide and land at their true height",
+    "pass": true
+  },
+  {
+    "test": "Repeaters delay directional signals; comparators read actual chest fullness; observers, buttons and pressure plates pulse",
+    "pass": true
+  },
+  {
+    "test": "Droppers transfer exactly once per rising signal; hoppers feed new containers; dispensers consume and fire arrows",
+    "pass": true
+  },
+  {
+    "test": "Sticky pistons push and retrieve a shaped block while preserving its rotation and sign text",
+    "pass": true
+  },
+  {
+    "test": "Actual sign editor, smithing and jukebox buttons execute; archaeology rewards once per excavated block",
+    "pass": true
+  },
+  {
+    "test": "Minecart accelerates along connected rails, reverses without teleporting, dismounts and returns its inventory item",
+    "pass": true
+  },
+  {
+    "test": "Bucket water spreads, drains after source removal, solidifies lava, and rain extinguishes exposed fire",
+    "pass": true
+  },
+  {
+    "test": "Carrots grow and harvest, fertilized potatoes stay mature, saplings become trees, and placed copper weathers",
+    "pass": true
+  },
+  {
+    "test": "New inventories, fluids and active encounters survive validation; parked raiders cannot be mistaken for defeated enemies; previous saves migrate",
+    "pass": true
+  },
+  {
+    "test": "Bell defence completes three real combat waves and rewards once; relic altar summons one persistent warden per location",
+    "pass": true
+  },
+  {
+    "test": "Charted Nether fortresses and End towers generate guarded cache locations; new journal tab and saved routes render",
+    "pass": true
+  },
+  {
+    "test": "nether outpost worker matches exact main-thread blocks",
+    "pass": true
+  },
+  {
+    "test": "end outpost worker matches exact main-thread blocks",
+    "pass": true
+  },
+  {
+    "test": "overworld worker bytes match main-thread realm terrain",
+    "pass": true
+  },
+  {
+    "test": "nether worker bytes match main-thread realm terrain",
+    "pass": true
+  },
+  {
+    "test": "end worker bytes match main-thread realm terrain",
+    "pass": true
+  },
+  {
+    "test": "Worker terrain bytes exactly match main-thread generation at large negative coordinates",
+    "pass": true
+  },
+  {
+    "test": "Four exact terrain-worker outputs match cross-chunk castle and cavern blocks",
+    "pass": true
+  },
+  {
+    "test": "4 GB and RTX 4060 profiles set actual shadow, cloud, reflection, atmosphere and view-distance budgets; 4K screens respect pixel caps",
+    "pass": true
+  },
+  {
+    "test": "Graphics controls change real render settings, persist preferences, and expose live rendering diagnostics",
+    "pass": true
+  }
+]

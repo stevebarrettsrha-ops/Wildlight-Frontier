@@ -1,0 +1,46 @@
+VERIFICATION RECORD
+
+52 automated gameplay and graphics-configuration check groups passed.
+This includes recipe matching, inventory accounting, saves/import validation,
+three-world generation, worker/main-thread terrain agreement, collision,
+weather/reflections, new machines, minecarts, crops, fluids, raids and GPU presets.
+
+The game test harness used real Three.js geometry, materials, math and textures,
+with browser DOM and renderer substitutes. It is not full browser playtesting.
+
+12 GPU shader programs compiled and linked on native EGL/GLES. Terrain and
+water also passed compilation with light, shadow and environment-map branches.
+
+5 Go server test groups passed with the race detector.
+Two real game runtimes communicating with the native server also passed
+mining, item pickup, chest/furnace transfer, creature, realm and reconnect checks.
+See multiplayer-checks.json for details.
+6 native Linux launcher integration checks passed:
+- Native Linux launcher starts from an unrelated working directory at its fixed local address
+- Launcher, game and all 11 exact engine/addon modules serve with correct MIME types and only local imports
+- Only app assets are served; save files, source, executables and unrecognized Host names are not exposed
+- Launching twice recognizes and reuses the existing server
+- Actual TCP listener accepts IPv4 LAN connections on 0.0.0.0
+- Ctrl+C shuts down the server cleanly
+
+Windows x64/ARM64, macOS Intel/Apple silicon and Linux x64/ARM64 launchers
+were built successfully. Only the Linux x64 binary was executed here.
+Direct access to the sandbox LAN IP was blocked by its network environment.
+Two physical-device LAN playtesting remains unverified.
+Actual Windows/macOS launch behaviour, full browser play, RTX 4060 frame rate
+and VRAM usage remain unverified on user hardware. No performance guarantee.
+
+ICON UPDATE VERIFICATION
+Both Windows launchers now contain one RT_GROUP_ICON and seven RT_ICON
+resources. Every image was extracted from each executable and matched to the
+ICO. PNG transparency, all seven sizes, PE section layout and checksum were
+checked. GNU objdump independently recognized the x64 resource directory.
+Every original executable section is byte-for-byte unchanged; the entry point,
+imports, relocation data and executable flags are preserved. Game and launcher
+JavaScript are unchanged. HTML changes add only icon/branding elements.
+The Linux launcher also served both pages and all three referenced icon assets
+with matching bytes and valid MIME types, then shut down cleanly.
+See icon-checks.json for this update's checks.
+The Windows desktop-shortcut helper is included but was not run on Windows.
+Actual Windows Explorer display and Windows/macOS visual testing remain
+unverified here. The earlier gameplay verification record above still applies.

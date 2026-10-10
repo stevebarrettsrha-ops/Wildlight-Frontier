@@ -1,0 +1,13 @@
+[
+  "Two complete game runtimes: simultaneous mining commits one block removal and one resource drop.",
+  "Concurrent chest extraction preserves exactly seven diamonds across two separate player inventories.",
+  "Stale furnace buttons re-read canonical slots: two simultaneous output claims deliver exactly six ingots.",
+  "A furnace beside the distant companion advances while the simulation leader is more than 700 blocks away.",
+  "Shared creatures replicate between clients; simultaneous lethal hits remove the same creature once.",
+  "Two players touching one ground stack receive exactly five emeralds in total.",
+  "Players explore different realms independently and receive the latest edits when returning.",
+  "File-backed reconnect restores Alice’s inventory and the canonical shared world without browser persistence.",
+  "An invalidated connection pauses gameplay and presents reconnect controls without writing an unconfirmed save.",
+  "Saves/world.json contains both private profiles, settings and edited realms; explicit save is acknowledged after disk write.",
+  "Packaged game and launcher have no browser persistence APIs."
+]

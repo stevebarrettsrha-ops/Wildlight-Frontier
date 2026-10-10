@@ -1,0 +1,63 @@
+{
+  "icon_sizes": [
+    16,
+    24,
+    32,
+    48,
+    64,
+    128,
+    256
+  ],
+  "windows": {
+    "Wildlight-Launcher.exe": {
+      "resources": 8,
+      "checksum": "valid",
+      "original_sections_unchanged": 8,
+      "imports_and_entrypoint_unchanged": true
+    },
+    "runtime/wildlight-windows-arm64.exe": {
+      "resources": 8,
+      "checksum": "valid",
+      "original_sections_unchanged": 6,
+      "imports_and_entrypoint_unchanged": true
+    }
+  },
+  "html": {
+    "app/index.html": {
+      "scripts_unchanged": true,
+      "favicon": true
+    },
+    "app/launcher.html": {
+      "scripts_unchanged": true,
+      "favicon": true
+    }
+  },
+  "server": {
+    "icons/wildlight.ico": {
+      "status": 200,
+      "mime": "image/vnd.microsoft.icon",
+      "bytes_match": true
+    },
+    "icons/wildlight-512.png": {
+      "status": 200,
+      "mime": "image/png",
+      "bytes_match": true
+    },
+    "icons/wildlight-180.png": {
+      "status": 200,
+      "mime": "image/png",
+      "bytes_match": true
+    },
+    "launcher.html": {
+      "status": 200,
+      "mime": "text/html; charset=utf-8",
+      "bytes_match": true
+    },
+    "index.html": {
+      "status": 200,
+      "mime": "text/html; charset=utf-8",
+      "bytes_match": true
+    },
+    "clean_shutdown": true
+  }
+}

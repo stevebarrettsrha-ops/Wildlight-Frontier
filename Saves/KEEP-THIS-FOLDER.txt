@@ -1,0 +1,4 @@
+The launcher creates world.json here on first run.
+It contains the shared world and all named player profiles.
+Stop the server before copying or restoring this folder.
+Do not delete it when updating your game.

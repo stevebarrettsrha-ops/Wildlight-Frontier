@@ -1,0 +1,196 @@
+WILDLIGHT FRONTIER — OFFLINE DESKTOP / TWO-PLAYER LAN
+Folder-based saves, shared-world co-op, 4 GB and 8 GB graphics profiles
+
+WINDOWS — START HERE
+1. Extract the entire ZIP to a folder you can write to.
+2. Double-click Wildlight-Launcher.exe, which now has the Wildlight icon.
+   Alternatively use START-WINDOWS.cmd for automatic architecture selection.
+3. A local server starts, and your default browser opens the graphics selector.
+4. Choose "8 GB · RTX 4060", enter a player name, and Join Shared World.
+   The host room code is filled in automatically on the host computer.
+5. Keep the console window open while either player is playing. Use
+   Save & Return to Launcher before leaving, then Ctrl+C to stop the server.
+
+No Python, Node.js, Go, online engine download, account, or installation is
+required to play. You need an installed desktop browser with WebGL 2 and
+hardware graphics acceleration. All game code, engine modules, shaders,
+textures, procedural sounds and world generation are included in this folder.
+
+YOUR LAUNCHER ICON / DESKTOP SHORTCUT
+The mountain-and-river icon is embedded in both Windows executable launchers,
+at 16, 24, 32, 48, 64, 128 and 256 pixels. It is also used in the launcher page
+and browser tab. The original transparent artwork is included in app/icons/.
+
+For an icon on your Windows desktop, double-click CREATE-DESKTOP-SHORTCUT.cmd
+once after extracting the game to its permanent location. It creates a
+"Wildlight Frontier" shortcut with the same embedded icon and automatically
+chooses the x64 or ARM64 launcher. Recreate the shortcut after moving the game.
+A .cmd file itself still uses Windows' command-script icon; use the .exe or
+created desktop shortcut to see the custom game icon. ICNS and PNG versions
+are included for manual icon assignment on other desktop systems.
+
+UPDATING AN EXISTING GAME
+Keep your existing Saves folder. Replace the app/, source/ and runtime/
+folders and the launcher/helper files from this ZIP; do not replace or delete
+Saves/world.json. A fresh extraction has only a save-folder instruction file.
+
+MACOS
+Double-click START-MAC.command. Binaries for Intel and Apple silicon are
+included. If the launch script is not executable after extraction, run it
+from Terminal with: sh START-MAC.command
+
+LINUX
+Open a terminal in this folder and run: sh START-LINUX.sh
+Both x86-64 and ARM64 binaries are included. The launcher uses xdg-open to
+open your browser; if no browser opens, enter the displayed local address
+manually. The server itself has no external library/runtime installation.
+
+The supplied launcher binaries are unsigned. Follow your computer's normal
+application approval policy. Full launcher source is included in source/.
+Windows and macOS binaries were cross-compiled; they were not run on those
+operating systems in the build environment.
+
+YOUR RTX 4060 / GPU SETTINGS
+- Choose the 8 GB profile. It starts with Cinematic lighting, 4096-pixel
+  shadow maps, 75% reflection resolution, 40 cloud samples, 12-chunk view
+  distance, and a rendering budget of about 1440p.
+- The 4 GB profile starts with Beautiful lighting, 2048-pixel shadows,
+  50% reflections, 24 cloud samples, an 8-chunk view distance, and a
+  rendering budget of about 1080p.
+- Press J > Graphics for the reported GPU, actual internal resolution, FPS,
+  lighting mode, render scale, shadow detail, reflections and view distance.
+- The game requests a high-performance GPU. If the browser reports an
+  integrated/software GPU, enable browser graphics acceleration. On Windows,
+  use Settings > System > Display > Graphics, select your browser, choose
+  its high-performance GPU option, and restart the browser.
+- These are quality presets, not measured VRAM caps. Browsers do not expose
+  reliable exact available VRAM. Rendering is bounded and adaptive resolution
+  can lower pixel count when frame rate drops. FPS is not guaranteed.
+- Shader ray tracing is optional and expensive. It uses GPU shader cores.
+  This WebGL game does NOT use dedicated NVIDIA RTX cores, DLSS, ray
+  reconstruction or frame generation. Cinematic mode is the starting choice.
+- Actual RTX 4060 frame rate and VRAM usage have not been benchmarked here.
+
+TWO PLAYERS ON SEPARATE DEVICES
+1. Only the host runs the launcher. Both computers use the same router/LAN.
+2. The host launcher shows a six-character room code and LAN addresses such
+   as http://192.168.1.20:41739/launcher.html. Share the correct LAN address
+   and room code with the second player.
+3. The second player opens that address in an installed desktop browser,
+   enters the code, and chooses a DIFFERENT player name. They do not need
+   their own copy of this ZIP: all files come from the host over the LAN.
+4. Choose a graphics profile separately on each computer. Both devices render
+   the game with their own GPU. No internet connection or online account is used.
+5. If prompted by the host operating system, allow this launcher through the
+   firewall on your private network. TCP port 41739 must be reachable. Guest
+   Wi-Fi/client isolation may prevent two devices from communicating.
+6. Do not use 127.0.0.1 on the second device; that address means itself.
+   Use the host's LAN address. A changed host IP does not affect saved worlds.
+
+The HUD names your companion and shows distance or their current realm.
+Players have separate inventories, equipment, positions, camps, progress and
+settings. Terrain, chests, machines, creatures, drops, weather and realm changes
+are shared. Both players can explore different areas or different realms.
+The server serializes world transactions, including item extraction. Player
+movement and rendering remain local; world updates run several times a second.
+This is cooperative play, with no player-versus-player damage.
+
+SAVES — REAL FILES IN THIS GAME FOLDER
+Saves/world.json contains the shared world and all named player profiles.
+No localStorage, IndexedDB, cookies or other browser persistence API is used.
+The temporary login credential lives in the tab's URL fragment. Changing
+browsers, clearing site data, or changing server ports does not erase saves.
+Use the SAME player name (case-insensitive) to resume the same inventory.
+Only two players can be connected simultaneously; inactive sessions expire
+in 15 seconds. Close an old tab and wait if your name is reported as connected.
+
+The host writes changed state approximately every second using a temporary
+file, file sync, and atomic replacement. J > Save World and Save & Return to
+Launcher wait for a confirmed disk write. A forced browser/process shutdown
+can lose the most recent uncommitted actions; explicitly save before closing.
+Do not close the host console while your companion is still playing.
+
+Saves/world.previous.json is refreshed at most once per minute as a recovery
+copy. Before importing, the host also keeps a timestamped before-import copy.
+To move the entire game, stop the server and copy this whole folder, including
+Saves. All profiles move with it. To back up only the save, copy Saves while
+stopped. Never edit world.json while the server is running.
+
+Recovery: stop the server; copy the Saves folder somewhere safe; replace a
+broken world.json with a copy of world.previous.json, then restart. The server
+refuses to overwrite unreadable save data automatically.
+
+The world simulates around connected players. It does not continue running
+while nobody is playing. This build has one shared world per extracted folder.
+For a fresh default world, stop the server and rename Saves to keep it as a
+backup; a new Saves folder is created on the next launch. Keep different game
+folders on different ports if running more than one server on the same host.
+
+IMPORTING YOUR PREVIOUS STANDALONE GAME
+1. Open the old HTML in the browser holding its old save; J > Export backup.
+2. Start this package and join with your player name.
+3. While you are the ONLY connected player, use J > Import backup.
+4. Choose that Wildlight JSON. The imported world and your inventory replace
+   the current world. The other player's prior-world progress resets, and a
+   before-import copy of the entire old world is retained on the host.
+
+J > Export backup remains available for a portable, single-player-compatible
+JSON. Copy the Saves folder to preserve ALL players together.
+
+SERVER AND RECONNECTING
+Host address: http://127.0.0.1:41739/launcher.html
+The server listens on local IPv4 network interfaces. It serves only app assets;
+Saves, source code, executables and other files are not downloadable routes.
+Room codes and temporary session tokens protect entry. The simulation trusts
+connected players; this is designed for a trusted LAN, not public hosting.
+
+On connection loss, editing pauses and a Reconnect button appears. Rejoining
+restores the latest committed state. If the host restarted or the session
+expired, return to the launcher and enter the same name and room code.
+A refreshed game tab can reuse its current session token.
+
+Optional switches (run a launcher binary from a terminal):
+  --no-browser        Host without opening a browser on this computer.
+  --port 41740        Use another LAN port; Saves remains in this folder.
+  --root "path"       Use another extracted folder containing app/ and Saves/.
+
+Launching twice reopens the existing server at the same port. If another
+application occupies the port, choose a different port or close that app.
+
+CONTROLS
+W A S D: move   Mouse: look   Space: jump   Shift: sprint / dismount
+Left click: mine/attack   Right click: use/place   E: inventory   J: journal
+K: equipment   G: cycle lighting quality   Esc: pause/release mouse
+Read J > How to play, Wilderness, Build & engineer, and Systems for full rules.
+
+CONTENTS
+app/                    Game and offline launcher page
+app/vendor/             Eleven pinned Three.js 0.160.0 engine/addon modules
+Wildlight-Launcher.exe  Windows x64 local server
+runtime/                Windows ARM64, macOS and Linux binaries
+source/                 Go launcher source and server/concurrency tests
+Saves/                  Created/updated by the server; preserve this folder
+licenses/               Third-party license notices
+SHA256SUMS.txt           Checksums for this package
+
+REBUILDING THE LAUNCHER (OPTIONAL, FOR DEVELOPERS)
+Install Go 1.24 or later separately, open source/, and run:
+  go test ./...
+  go build -buildvcs=false -trimpath -ldflags="-s -w" -o ../launcher .
+No external Go modules are required. CGO_ENABLED=0 is used for supplied builds.
+After building a fresh Windows .exe, embed its icon with Python 3 (build step
+only; players do not need Python):
+  python3 embed_icon.py ../launcher.exe ../app/icons/wildlight.ico
+The helper refuses signed executables or existing resources and preserves
+all original executable sections. It uses only the Python standard library.
+Build toolchain: Go 1.27.2, downloaded from go.dev and SHA-256 verified.
+
+Reference documentation (optional online reading, not runtime dependencies):
+https://www.nvidia.com/en-us/geforce/graphics-cards/40-series/rtx-4060-4060ti/
+https://threejs.org/docs/pages/WebGLRenderer.html
+https://support.microsoft.com/en-us/windows/hardware/display-graphics/optimizations-for-windowed-games-in-windows-11
+https://go.dev/doc/install/source
+
+This is an original cooperative voxel game. It does not reproduce every
+Minecraft feature, official world formats, or Minecraft network protocols.
+See VERIFICATION.txt for tested behavior and platform-testing limitations.
